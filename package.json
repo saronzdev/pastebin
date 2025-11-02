@@ -1,0 +1,24 @@
+{
+  "name": "pastebin",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Pastebin for saronztools project",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.16",
+    "preact": "^10.27.2",
+    "sonner": "^2.0.7",
+    "tailwindcss": "^4.1.16",
+    "wouter": "^3.7.1"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.10.2",
+    "@types/node": "^24.6.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.7"
+  }
+}
