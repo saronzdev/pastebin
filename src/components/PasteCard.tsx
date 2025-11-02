@@ -22,12 +22,12 @@ export function PasteCard({ paste }: Props) {
   }
   return (
     <div className="p-4 m-4 flex flex-col justify-center items-center bg-violet-500 rounded-md shadow-md">
-      <h2 className="text-xl text-white font-semibold">{paste?.author}</h2>
-      <p className="text-gray-100">{paste?.body}</p>
+      <h2 className="text-xl text-white font-semibold">{paste?.author ? paste.author : 'Anonimus'}</h2>
+      <p className="text-gray-100 text-center">{paste?.body}</p>
       <div className="flex flex-col items-center justify-between mt-2">
         <p className="text-gray-300">{paste ? new Date(paste.createdAt).toLocaleString() : ''}</p>
         {paste && (
-          <div className="m-2 flex items-center gap-1 text-gray-200">
+          <div className="m-1 flex items-center gap-1 text-gray-200">
             <img src={eye} alt="Views" className="w-4 h-4" />
             <span className="text-sm">{paste.views}</span>
           </div>

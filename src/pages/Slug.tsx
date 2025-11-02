@@ -1,6 +1,6 @@
 import { PasteCard } from '../components/PasteCard'
 import { useState, useEffect } from 'preact/hooks'
-import { getPasteBySlug } from '../utils/requests'
+import { getPasteBySlug, incrementViewsBySlug } from '../utils/requests'
 import { useParams } from 'wouter'
 import type { PasteOut } from '../types'
 
@@ -17,7 +17,16 @@ export function SlugPage() {
       }
       setPaste(paste as PasteOut)
     }
+
+    async function incrementViews() {
+      const result = await incrementViewsBySlug(slug as string)
+      if (result) {
+        console.error(result.error)
+        return
+      }
+    }
     getPaste()
+    incrementViews()
   }, [])
 
   return (

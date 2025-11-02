@@ -4,7 +4,7 @@ import { createPaste } from '../utils/requests'
 import { ResultCard } from './ResultCard'
 import { toast } from 'sonner'
 
-export function PostForm() {
+export function FormPost() {
   const [slug, setSlug] = useState<string | undefined>()
   const [loading, setLoading] = useState(false)
 
@@ -59,6 +59,7 @@ export function PostForm() {
             id="body"
             cols={3}
             rows={5}
+            required
             placeholder="Write a note..."
             className="p-2 m-1 w-full border border-gray-600 rounded-sm focus:outline-0 focus:border-2 focus:border-gray-800"
           />

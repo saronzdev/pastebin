@@ -39,3 +39,23 @@ export async function getPasteBySlug(slug: string): Promise<{ paste?: PasteOut; 
     return { error: 'Network error' }
   }
 }
+
+//PATCH
+export async function incrementViewsBySlug(slug: string): Promise<{ error?: string } | void> {
+  try {
+    const response = await fetch(`${api}/${slug}/views`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    if (!response.ok) {
+      const err = await response.json().catch(() => ({ message: response.statusText }))
+      console.error(err)
+      return { error: err.message || 'Error incrementing views' }
+    }
+  } catch (e) {
+    console.error(e)
+    return { error: 'Network error' }
+  }
+}
