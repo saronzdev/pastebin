@@ -1,6 +1,6 @@
 import { Link } from 'wouter'
 
-export function Home() {
+export function HomePage() {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center gap-2">
       <h1 className="p-4 text-6xl font-serif font-medium text-center">Pastebin</h1>

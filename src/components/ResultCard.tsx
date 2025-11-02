@@ -13,6 +13,9 @@ export function ResultCard({ slug }: Props) {
     if (state === 'Copy') {
       navigator.clipboard.writeText(slug)
       setState('Copied!')
+      setTimeout(() => {
+        setState('Copy')
+      }, 2000)
       toast.success('Copied to clipboard')
     } else {
       setState('Copy')

@@ -4,7 +4,7 @@ import { createPaste } from '../utils/requests'
 import { ResultCard } from './ResultCard'
 import { toast } from 'sonner'
 
-export function Form() {
+export function PostForm() {
   const [slug, setSlug] = useState<string | undefined>()
   const [loading, setLoading] = useState(false)
 

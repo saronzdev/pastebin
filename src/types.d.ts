@@ -5,6 +5,7 @@ export type PasteIn = {
 }
 type Paste = {
   slug: string
+  views: number
   createdAt: number
 }
 

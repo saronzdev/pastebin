@@ -1,5 +1,5 @@
 import { api } from './constants'
-import type { PasteIn } from '../types'
+import type { PasteIn, PasteOut } from '../types'
 
 // POST
 export async function createPaste(paste: PasteIn): Promise<{ slug?: string; error?: string }> {
@@ -24,7 +24,7 @@ export async function createPaste(paste: PasteIn): Promise<{ slug?: string; erro
 }
 
 // GET
-export async function getPaste(slug: string): Promise<{ paste?: PasteIn; error?: string }> {
+export async function getPasteBySlug(slug: string): Promise<{ paste?: PasteOut; error?: string }> {
   try {
     const response = await fetch(`${api}/${slug}`)
     if (!response.ok) {

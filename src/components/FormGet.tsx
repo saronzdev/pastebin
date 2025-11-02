@@ -1,6 +1,6 @@
 import { PasteCard } from './PasteCard'
 import { useState } from 'preact/hooks'
-import { getPaste } from '../utils/requests'
+import { getPasteBySlug } from '../utils/requests'
 import { toast } from 'sonner'
 import type { PasteOut } from '../types'
 
@@ -13,7 +13,7 @@ export function GetForm() {
     const formData = new FormData(e.target as HTMLFormElement)
     const slug = formData.get('slug') as string
     setLoading(true)
-    const { paste: retrievedPaste, error } = await getPaste(slug)
+    const { paste: retrievedPaste, error } = await getPasteBySlug(slug)
     setLoading(false)
     if (error) {
       toast.error(error)
